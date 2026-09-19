@@ -6,8 +6,9 @@ O projeto também serve de exemplo prático para uma apostila que ensina, passo 
 
 ## O que o app faz
 
-- Mostra a **frase do dia**. A mesma data sempre devolve a mesma frase, então todo mundo vê a mesma.
-- O botão **Outra zoeira** sorteia uma frase aleatória, sem repetir a que já está na tela.
+- Tem três categorias, escolhidas nos botões do topo: **Zoeira**, **Insulto sutil** e **Desmotivacional**.
+- Mostra a **frase do dia** da categoria escolhida. A mesma data sempre devolve a mesma frase, então todo mundo vê a mesma.
+- O botão de sorteio (**Outra zoeira**, **Outro insulto** ou **Outra desmotivação**, conforme a categoria) mostra outra frase da categoria, sem repetir a que já está na tela.
 - O botão **Compartilhar** abre o menu de compartilhamento do celular com a frase pronta.
 
 Não há login, servidor nem internet: as frases ficam dentro do próprio app.
@@ -34,30 +35,35 @@ Também existem `npm run android` e `npm run ios`, que abrem o app em um emulado
 
 ```
 zoeira-diaria/
-├── App.tsx               tela principal do app
+├── App.tsx                       tela principal do app
 ├── src/
-│   ├── frases.ts         lógica de sorteio e da frase do dia
+│   ├── frases.ts                 categorias, sorteio e frase do dia
 │   └── data/
-│       └── frases.json   banco de frases
-├── assets/               ícones e imagem de abertura
-└── app.json              configurações do Expo (nome, ícone, etc.)
+│       ├── zoeira.json           frases da categoria Zoeira
+│       ├── insultos.json         frases da categoria Insulto sutil
+│       └── desmotivacionais.json frases da categoria Desmotivacional
+├── assets/                       ícones e imagem de abertura
+├── app.json                      configurações do Expo (nome, ícone, etc.)
+└── THIRD_PARTY_NOTICES.md        créditos e licença de frases de terceiros
 ```
 
 ## Como adicionar frases
 
-Todas as frases ficam em `src/data/frases.json`. Cada uma é um objeto com um `id` e um `texto`:
+Cada categoria tem o seu arquivo em `src/data/`. Cada frase é um objeto com um `id` e um `texto`:
 
 ```json
-{ "id": 25, "texto": "Sua frase nova aqui." }
+{ "id": 47, "texto": "Sua frase nova aqui." }
 ```
 
 Regras para não quebrar nada:
 
-- O `id` precisa ser **único**. O sorteio usa o id para não repetir a frase que está na tela, então dois ids iguais fazem frases sumirem do sorteio.
-- Use o próximo número livre depois do maior id da lista.
+- O `id` precisa ser **único dentro do arquivo**. O sorteio usa o id para não repetir a frase que está na tela, então dois ids iguais fazem frases sumirem do sorteio.
+- Use o próximo número livre depois do maior id do arquivo.
 - Evite frases repetidas.
 
 Cada frase nova muda a conta da frase do dia, então a frase de uma mesma data pode mudar depois que você adiciona frases à lista.
+
+Para criar uma categoria nova, crie um arquivo JSON em `src/data/` no mesmo formato e acrescente uma entrada na lista `categorias` de `src/frases.ts`, com o `nome` que aparece no seletor e o texto do botão de sorteio (`botao`). O seletor da tela mostra a nova categoria sozinho.
 
 ## Verificar o código
 
@@ -66,6 +72,10 @@ npx tsc --noEmit
 ```
 
 Esse comando confere os tipos do TypeScript sem gerar arquivos.
+
+## Créditos
+
+As categorias **Insulto sutil** e **Desmotivacional** usam frases do projeto [frases-aleatorias](https://github.com/timeuz/frases-aleatorias), de timeuz, distribuído sob a licença MIT. O aviso de copyright e o texto da licença estão em [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
 ## Licença
 
