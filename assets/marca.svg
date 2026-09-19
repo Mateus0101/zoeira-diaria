@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="6 10 92 92" width="512" height="512">
+  <path d="M32 14 H68 A22 22 0 0 1 90 36 V52 A22 22 0 0 1 68 74 H58 L36 92 L44 74 H32 A22 22 0 0 1 10 52 V36 A22 22 0 0 1 32 14 Z" transform="translate(5 6)" fill="#17171C" stroke="#17171C" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M32 14 H68 A22 22 0 0 1 90 36 V52 A22 22 0 0 1 68 74 H58 L36 92 L44 74 H32 A22 22 0 0 1 10 52 V36 A22 22 0 0 1 32 14 Z" fill="#FFC93F" stroke="#17171C" stroke-width="5" stroke-linejoin="round"/>
+  <g fill="none" stroke="#17171C" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><polyline points="30,29 41,36 30,43"/><polyline points="70,29 59,36 70,43"/></g>
+  <clipPath id="boca"><path d="M32 48 H68 C68 60 61 65 50 65 C39 65 32 60 32 48 Z"/></clipPath>
+  <path d="M32 48 H68 C68 60 61 65 50 65 C39 65 32 60 32 48 Z" fill="#17171C" stroke="#17171C" stroke-width="2" stroke-linejoin="round"/>
+  <ellipse cx="50" cy="63" rx="9" ry="4.5" fill="#FF6F91" clip-path="url(#boca)"/>
+</svg>

@@ -1,17 +1,31 @@
 import zoeira from './data/zoeira.json';
 import insultos from './data/insultos.json';
 import desmotivacionais from './data/desmotivacionais.json';
+import { cores } from './tema';
 
 export type Frase = { id: number; texto: string };
-export type Categoria = { id: string; nome: string; botao: string; frases: Frase[] };
+export type Categoria = {
+  id: string;
+  nome: string;
+  botao: string;
+  cor: string;
+  frases: Frase[];
+};
 
 export const categorias: Categoria[] = [
-  { id: 'zoeira', nome: 'Zoeira', botao: 'Outra zoeira', frases: zoeira },
-  { id: 'insulto', nome: 'Insulto sutil', botao: 'Outro insulto', frases: insultos },
+  { id: 'zoeira', nome: 'Zoeira', botao: 'Outra zoeira', cor: cores.amarelo, frases: zoeira },
+  {
+    id: 'insulto',
+    nome: 'Insulto sutil',
+    botao: 'Outro insulto',
+    cor: cores.rosa,
+    frases: insultos,
+  },
   {
     id: 'desmotivacional',
     nome: 'Desmotivacional',
     botao: 'Outra desmotivação',
+    cor: cores.menta,
     frases: desmotivacionais,
   },
 ];
