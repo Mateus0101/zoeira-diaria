@@ -31,7 +31,9 @@ npm start
 
 O `npm start` mostra um QR code no terminal. Abra o Expo Go e escaneie o código para ver o app no celular. O celular e o computador precisam estar na mesma rede wi-fi.
 
-Também existem `npm run android` e `npm run ios`, que abrem o app em um emulador, se você tiver um configurado. O modo web (`npm run web`) ainda não está configurado neste projeto.
+Também existem `npm run android` e `npm run ios`, que abrem o app em um emulador, se você tiver um configurado.
+
+Para ver o app no navegador do computador, rode `npm run web`. Dica: no Chrome, aperte **F12** e depois **Ctrl+Shift+M** para simular a tela de um celular. Alguns recursos, como enviar a frase como imagem, podem não funcionar no navegador, e o celular continua sendo o melhor lugar para testar o compartilhamento.
 
 ### Erro `Unable to resolve "..."`
 
