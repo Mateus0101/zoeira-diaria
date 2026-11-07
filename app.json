@@ -10,6 +10,7 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "com.mateusmenezes.zoeiradiaria",
       "adaptiveIcon": {
         "backgroundColor": "#1D46D1",
         "foregroundImage": "./assets/android-icon-foreground.png",
@@ -25,6 +26,11 @@
       "expo-font",
       "expo-sharing",
       "expo-status-bar"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "632b1bbe-0c2f-438d-acf8-040aa884235c"
+      }
+    }
   }
 }
