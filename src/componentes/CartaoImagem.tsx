@@ -1,4 +1,4 @@
-import { forwardRef } from 'react';
+import { forwardRef, type ComponentRef } from 'react';
 import { Text, View } from 'react-native';
 import { cores, fontes } from '../tema';
 import { Marca } from './Marca';
@@ -12,7 +12,7 @@ type Props = {
 
 // Cartão 4:5 que vira a imagem compartilhada. Tudo é medido em "u" (1u = 1/360 da largura),
 // então o mesmo desenho serve para a prévia pequena e para a imagem final grande.
-export const CartaoImagem = forwardRef<View, Props>(function CartaoImagem(
+export const CartaoImagem = forwardRef<ComponentRef<typeof View>, Props>(function CartaoImagem(
   { texto, cor, largura },
   ref,
 ) {

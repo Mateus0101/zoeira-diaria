@@ -1,5 +1,5 @@
 import { Ionicons } from '@expo/vector-icons';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, type ComponentRef } from 'react';
 import { Animated, Modal, Pressable, Text, View, useWindowDimensions } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import {
@@ -77,7 +77,7 @@ export function FolhaCompartilhar({ visivel, aoFechar, texto, cor }: Props) {
   const [copiado, setCopiado] = useState(false);
   const [ocupado, setOcupado] = useState(false);
   const [erro, setErro] = useState<string | null>(null);
-  const cartao = useRef<View>(null);
+  const cartao = useRef<ComponentRef<typeof View>>(null);
   const subida = useRef(new Animated.Value(0)).current;
   const temporizador = useRef<ReturnType<typeof setTimeout> | null>(null);
 

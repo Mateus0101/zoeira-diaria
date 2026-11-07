@@ -1,6 +1,6 @@
 import * as Clipboard from 'expo-clipboard';
 import * as Sharing from 'expo-sharing';
-import type { RefObject } from 'react';
+import type { ComponentRef, RefObject } from 'react';
 import type { View } from 'react-native';
 import { Share } from 'react-native';
 import { captureRef } from 'react-native-view-shot';
@@ -21,7 +21,7 @@ export async function compartilharTexto(texto: string) {
 export const ERRO_SEM_COMPARTILHAMENTO = 'sem-compartilhamento';
 
 // Tira uma "foto" do cartão que está na tela (1080 x 1350, formato 4:5) e abre o menu de compartilhar.
-export async function compartilharImagem(cartao: RefObject<View | null>) {
+export async function compartilharImagem(cartao: RefObject<ComponentRef<typeof View> | null>) {
   if (!(await Sharing.isAvailableAsync())) throw new Error(ERRO_SEM_COMPARTILHAMENTO);
 
   const arquivo = await captureRef(cartao, {
